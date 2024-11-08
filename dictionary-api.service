@@ -1,0 +1,16 @@
+# /etc/systemd/system/dictionary-api.service
+[Unit]
+Description=Dictionary API Service
+After=network.target
+
+[Service]
+User=dictionary_user
+Group=dictionary_user
+WorkingDirectory=/opt/dictionary-api
+Environment="PATH=/opt/dictionary-api/venv/bin"
+ExecStart=/opt/dictionary-api/venv/bin/gunicorn --workers 4 --bind="127.0.0.1:8181" -m 007 wsgi:app
+#ExecStart=/opt/dictionary-api/venv/bin/gunicorn --workers 4 --bind unix:dictionary-api.sock -m 007 wsgi:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

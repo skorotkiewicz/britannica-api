@@ -1,0 +1,9 @@
+flask
+beautifulsoup4
+requests
+flask-cors
+flask-caching
+flask-limiter
+gunicorn
+gevent
+pymemcache
