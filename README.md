@@ -1,7 +1,11 @@
 # Britannica Dictionary API 
 [britannica.com/dictionary](https://www.britannica.com/dictionary)
 
+------
+
 **API Usage**: Use this API by making a GET request to `https://dict.sekor.eu.org/x/{word}`
+
+------
 
 ```
 pacman -S memcached
