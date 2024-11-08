@@ -20,11 +20,10 @@ cache = Cache(config={
 cache.init_app(app)
 
 limiter = Limiter(
-    get_remote_address,
+    key_func=get_remote_address,
     app=app,
     storage_uri="memcached://localhost:11211",
     default_limits=["100 per day", "20 per hour"],
-    strategy="fixed-window", # or "moving-window"
 )
 
 # limiter = Limiter(
